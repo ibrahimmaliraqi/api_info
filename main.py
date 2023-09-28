@@ -113,6 +113,6 @@ def gmail():
         return jsonify({"code":"true"})
     else:
         return jsonify({"code":"false"})
-if __name__=="__main__:
+if __name__=="__main__":
     ibrahim.run(debug=True,port=9050)       
         
