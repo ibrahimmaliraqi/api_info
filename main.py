@@ -1,21 +1,22 @@
 from flask import Flask,jsonify,request
-
+import requests,uuid,random,string
+import time
 from fake_useragent import UserAgent
 import secrets
-import requests
 import re
 import random
+from time import sleep
 Session = requests.Session()
 UserAgent = UserAgent()
 MOZ = UserAgent.random
 Cookie = secrets.token_hex(16)*2
-ibrahim = Flask(__name__)
-@ibrahim.route("/ibrahimm")
+app = Flask(__name__)
+@app.route("/ibrahim")
 def gmail():
     email = request.args.get("email")
-    if not email:
-        return jsonify({"code":"you must put an email."})
     
+    if not email:
+        return jsonify({"error":"You must put an email."})
     Session.Link_1 = ('https://accounts.google.com/_/signup/validatepersonaldetails?hl=ar&_reqid=47268&rt=j')
     Session.Headers_1 = ({
     'Host': 'accounts.google.com',
@@ -110,9 +111,8 @@ def gmail():
     Session.Response_3 = requests.post(Session.Link_3,headers=Session.Headers_3,data=Session.Data_3).text
     
     if ('"gf.uar",1') in Session.Response_3:
-        return jsonify({"code":"true"})
+        return jsonify({"code":"Gmail True"})
     else:
-        return jsonify({"code":"false"})
+        return jsonify({"code":"Gmail False"})
 if __name__=="__main__":
-    ibrahim.run(debug=True,port=9050)       
-        
+    app.run(debug=True,port=6050)
