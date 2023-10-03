@@ -114,5 +114,3 @@ def gmail():
         return jsonify({"code":"Gmail True"})
     else:
         return jsonify({"code":"Gmail False"})
-if __name__=="__main__":
-    app.run(debug=True,port=6050)
