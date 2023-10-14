@@ -1,4 +1,4 @@
-python -m pip install --upgrade python-pip 
+pip==23.2.1
 flask
 pyOpenSSL
 requests
