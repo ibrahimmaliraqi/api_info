@@ -1,5 +1,6 @@
-pip
+--upgrade-pip
 flask
+pyOpenSSL
 requests
 uuid
 secrets
