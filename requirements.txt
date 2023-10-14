@@ -2,8 +2,6 @@ pip==23.2.1
 flask
 pyOpenSSL
 OpenSSL
-python-pip
-python-pip==23.2.1
 openSSL
 requests
 uuid
